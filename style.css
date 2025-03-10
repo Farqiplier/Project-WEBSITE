@@ -1,0 +1,66 @@
+/* style.css */
+
+:root {
+    --bg-color: #121212; 
+    --text-color: #ffffff;
+    --accent-color: #007bff;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Comic Sans MS', cursive, sans-serif; 
+    margin: 0;
+    line-height: 1.8;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden; 
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth; 
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ... other styles ... */
+
+/* Scroll Animations */
+.slide-up {
+    opacity: 0; 
+    transform: translateY(50px); 
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+.slide-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-out; 
+}
+
+.fade-in.active {
+    opacity: 1;
+}
+
+/* Hover Effects */
+.image-block:hover img,
+.small-image-block:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease; 
+}
+
+/* Parallax Effect - Applied to home-image in home.html */
+.home-image {
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+} 
