@@ -23,39 +23,70 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: background 0.5s ease;
   outline: 2px solid rgba(255, 255, 255, 0.1);
-
+  height: 81px;
   
 }
 
-.LSA-image img {
-  max-width: 10%;
-  width: auto;
+.LSA-image {
+  max-width: 12%;
+  margin-right: 50px;
+  margin-left: 30px;
+
 }
 
+/* Adjust the nav-wrapper to align items to the left */
+.nav-wrapper {
+  display: flex;
+  justify-content: flex-start; /* Aligns items to the left */
+  align-items: center;
+}
+
+/* Ensure the nav-buttons are aligned properly */
 .nav-buttons {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  margin-right: 20px; /* Add margin to push buttons next to the image */
 }
 
 header a {
-  text-decoration: none;
+  position: relative; /* Allows positioning of the pseudo-element */
   color: #fff;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.0);
   padding: 10px 20px;
-  border-radius: 15px;
   transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  margin-right: 20px;
+  text-decoration: none; /* Remove underline from the entire element */
+  font-size: 1em; /* Increases the font size */
+  border-radius: 15px;
+}
+
+header a span {
+  text-decoration: underline; /* Apply underline only to the text inside the span */
+  text-decoration-thickness: 1px; /* Makes the underline thicker */
+  text-underline-offset: 3px; /* Moves the underline lower */
+}
+
+header a:hover {
+  color: rgb(255, 255, 255);
+  font-size: 1.05em;
+  font-weight: bold;
+}
+
+header a::after {
+  content: '';
+  position: absolute;
 }
 
 header a:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.2);
 }
+
 
 main {
   display: flex;
@@ -66,6 +97,8 @@ main {
   padding-bottom: 60px;
   width: 100%;
 }
+
+
 
 .text-block,
 .image-block {
@@ -137,9 +170,8 @@ footer p {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   transition: background 0.3s ease, color 0.3s ease;
-  display: flex;
-  justify-content: flex-end;
-
+  position: fixed;
+  right: 40px;
 }
 
 .theme-toggle:hover {
@@ -153,12 +185,12 @@ body.light-mode {
 }
 
 body.light-mode header {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgb(138, 138, 138);
 }
 
 body.light-mode header a {
   color: #333;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0);
 }
 
 body.light-mode header a:hover {

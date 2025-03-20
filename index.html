@@ -9,22 +9,25 @@
 </head>
 <body>
   <header>
-    <div class="nav-buttons ">
+    <div class="nav-buttons">
       <div class="LSA-image">
         <img src="LSA-image.png" alt="Limburg STEM't af!">
       </div>
-      <nav>
+      <div class="nav-wrapper">
+        <nav>
+          
+          <a href="#" onclick="loadPage('home')" class="active"><u>Home</u></a>
+          <a href="#" onclick="loadPage('about')"><span><u>About</u></span></a>
+          <a href="#" onclick="loadPage('blog')"><span><u>Blog</u></span></a>
+          <a href="#" onclick="loadPage('contact')"><span><u>Contact</u></span></a>
+        </nav>
         
-        <a href="#" onclick="loadPage('home')" class="active">Home</a>
-        <a href="#" onclick="loadPage('about')">About</a>
-        <a href="#" onclick="loadPage('blog')">Blog</a>
-        <a href="#" onclick="loadPage('contact')">Contact</a>
-        
-      </nav>
-      
+        <div class="theme-toggle" onclick="toggleTheme()"> </div>
+      </div>
     </div>
-    <div class="theme-toggle" onclick="toggleTheme()"> </div>
   </header>
+  
+  
   <main id="content">
   </main>
   <footer>
