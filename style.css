@@ -29,21 +29,166 @@ header {
   transition: background 0.5s ease;
   outline: 2px solid rgba(255, 255, 255, 0.1);
   height: 81px;
-  
 }
 
 .LSA-image {
   max-width: 12%;
   margin-right: 50px;
   margin-left: 30px;
-
 }
 
-/* Adjust the nav-wrapper to align items to the left */
 .nav-wrapper {
   display: flex;
-  justify-content: flex-start; /* Aligns items to the left */
   align-items: center;
+  gap: 10px; /* Space between nav and theme toggle */
+  position: relative; /* For positioning the pseudo-element */
+  justify-content: space-between; /* Space between elements */
+}
+
+.header-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 2.1em;
+  color: #fff;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+.nav-wrapper nav {
+  border: 2px solid #000000; /* Black border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 10px; /* Space inside the border */
+  display: flex;
+  gap: 10px; /* Space between the buttons */
+}
+
+.nav-wrapper nav a {
+  padding: 10px 20px; /* Adjust padding for buttons */
+  margin: 0; /* Remove margin */
+  border-radius: 10px; /* Rounded corners for buttons */
+  text-decoration: none; /* Remove underline */
+  color: #fff; /* Text color */
+  background: rgba(255, 255, 255, 0.1); /* Background color */
+  transition: background 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.nav-wrapper nav a:hover {
+  background: rgb(255, 255, 255); /* Background color on hover */
+}
+
+.light-mode .nav-wrapper nav {
+  border: 2px solid #ffffff; /* White border */
+  background: rgba(119, 119, 119, 0.5); /* Light background color */
+}
+
+.light-mode .nav-wrapper nav a {
+  color: #000; /* Black text color */
+  background: rgba(255, 255, 255, 0.1); /* Light background color */
+}
+
+.light-mode .nav-wrapper nav a:hover {
+  background: rgba(255, 255, 255, 0.2); /* Light background color on hover */
+}
+
+.software-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+  outline: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.software-wrapper-title {
+  grid-column: span 2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.software-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease, outline 0.3s ease;
+  outline: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.software-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.software-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+  outline: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.software-wrapper-title {
+  grid-column: span 2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.software-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease, outline 0.3s ease;
+  outline: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.software-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+} /* hello */
+.hardware-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 600px;
+  margin: 30px auto;
+  outline: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hardware-wrapper-title {
+  grid-column: span 2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hardware-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease, outline 0.3s ease;
+  outline: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hardware-item:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 /* Ensure the nav-buttons are aligned properly */
@@ -87,7 +232,6 @@ header a:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 
-
 main {
   display: flex;
   flex-direction: column;
@@ -97,8 +241,6 @@ main {
   padding-bottom: 60px;
   width: 100%;
 }
-
-
 
 .text-block,
 .image-block {
@@ -110,7 +252,6 @@ main {
   transition: transform 0.3s ease, background 0.3s ease, outline 0.3s ease;
   outline: 2px solid rgba(255, 255, 255, 0.2);
 }
-
 
 .text-block:hover,
 .image-block:hover {
