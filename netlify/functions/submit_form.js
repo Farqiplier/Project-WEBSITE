@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const querystring = require('querystring');
 
 exports.handler = async (event, context) => {
   if (event.httpMethod !== 'POST') {
@@ -8,14 +9,16 @@ exports.handler = async (event, context) => {
     };
   }
 
-  const { name, email, message } = JSON.parse(event.body);
+  // Parse URL-encoded form data
+  const formData = querystring.parse(event.body);
+  const { name, email, message } = formData;
 
   // Create a transporter object using SMTP transport
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: 'your-email@gmail.com', // Replace with your email
-      pass: 'your-email-password', // Replace with your email password
+      user: 'slimme.prullenbak@gmail.com', // Replace with your email
+      pass: 'aobl gihy iveb nkqd', // Replace with your App Password
     },
   });
 
