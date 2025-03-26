@@ -11,7 +11,7 @@
 </div>
 <div class="text-block slide-up">
   <h2>Contact Form</h2>
-  <form id="contact-form" action="/.netlify/functions/submit_form" method="post">
+  <form id="contact-form">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
     
@@ -24,3 +24,46 @@
     <button type="submit">Send Message</button>
   </form>
 </div>
+
+<!-- Success Message Popup -->
+<div id="success-message" style="display: none; background-color: green; color: white; padding: 10px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
+  Thank you, your message has been sent.
+</div>
+
+<!-- Error Message Popup -->
+<div id="error-message" style="display: none; background-color: red; color: white; padding: 10px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
+  Sorry, there was an error sending your message. Please try again later.
+</div>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const formData = new FormData(this);
+  const data = new URLSearchParams(formData);
+
+  fetch('/.netlify/functions/submit_form', {
+    method: 'POST',
+    body: data,
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text();
+  })
+  .then(result => {
+    document.getElementById('success-message').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('success-message').style.display = 'none';
+    }, 3000);
+  })
+  .catch(error => {
+    document.getElementById('error-message').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('error-message').style.display = 'none';
+    }, 3000);
+    console.error('Error:', error);
+  });
+});
+</script>
