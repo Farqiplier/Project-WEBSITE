@@ -1,15 +1,4 @@
 <div class="text-block slide-up">
-  <h2>Contact Us</h2>
-  <p>Get in touch with us via email or phone. We'd love to hear from you!</p>
-</div>
-<div class="image-block slide-up">
-  <img src="contact-image.jpg" alt="Contact Image">
-</div>
-<div class="text-block slide-up">
-  <h2>Visit Us</h2>
-  <p>Our office is located at 123 Futuristic Lane, Innovation City.</p>
-</div>
-<div class="text-block slide-up">
   <h2>Contact Form</h2>
   <form id="contact-form">
     <label for="name">Name:</label>
@@ -37,7 +26,7 @@
 
 <script>
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevent the default form submission
 
   const formData = new FormData(this);
   const data = new URLSearchParams(formData);
