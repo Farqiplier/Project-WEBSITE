@@ -57,6 +57,9 @@ header {
   font-weight: bold;
 }
 
+body.light-mode .header-text {
+  color: #333;
+}
 .nav-wrapper nav {
   border: 2px solid #000000; /* Black border */
   border-radius: 15px; /* Rounded corners */
@@ -81,12 +84,12 @@ header {
 
 .light-mode .nav-wrapper nav {
   border: 2px solid #ffffff; /* White border */
-  background: rgba(119, 119, 119, 0.5); /* Light background color */
+  background: rgba(255, 253, 253, 0.5); /* Light background color */
 }
 
 .light-mode .nav-wrapper nav a {
   color: #000; /* Black text color */
-  background: rgba(255, 255, 255, 0.1); /* Light background color */
+  background: rgba(143, 143, 143, 0.1); /* Light background color */
 }
 
 .light-mode .nav-wrapper nav a:hover {
@@ -145,6 +148,15 @@ header {
   margin-bottom: 20px;
 }
 
+body.light-mode .software-wrapper {
+  background: rgba(0, 0, 0, 0.1);
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .software-wrapper-title { 
+  color: #000000;
+}
+
 .software-item {
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
@@ -157,7 +169,17 @@ header {
 .software-item:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.2);
-} /* hello */
+} 
+
+body.light-mode .software-item {
+  background: rgba(0, 0, 0, 0.1);
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .software-item:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
 .hardware-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -166,7 +188,7 @@ header {
   padding: 20px;
   border-radius: 15px;
   width: 80%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 30px auto;
   outline: 2px solid rgba(255, 255, 255, 0.2);
 }
@@ -183,13 +205,30 @@ header {
   border-radius: 15px;
   text-align: center;
   transition: transform 0.3s ease, background 0.3s ease, outline 0.3s ease;
-  outline: 2px solid rgba(255, 255, 255, 0.2);
+  outline: 2px solid rgba(255, 255, 255, 0.2); 
+}
+
+.hardware-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
 }
 
 .hardware-item:hover {
   transform: translateY(-5px);
   background: rgba(255, 255, 255, 0.2);
 }
+
+body.light-mode .hardware-item {
+  background: rgba(0, 0, 0, 0.1);
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+} 
+
+body.light-mode .hardware-item:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
 
 /* Ensure the nav-buttons are aligned properly */
 .nav-buttons {
@@ -313,6 +352,7 @@ footer p {
   transition: background 0.3s ease, color 0.3s ease;
   position: fixed;
   right: 40px;
+  outline: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .theme-toggle:hover {
@@ -321,17 +361,19 @@ footer p {
 
 /* Light Mode Styles */
 body.light-mode {
-  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  background: linear-gradient(135deg, #ffffff, #cccccc);
   color: #333;
 }
 
 body.light-mode header {
-  background: rgb(138, 138, 138);
+  background: rgba(0, 0, 0, 0.1);
+  outline: 3px solid rgba(0, 0, 0, 0.3);
 }
 
 body.light-mode header a {
   color: #333;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(255, 255, 255, 0.2);
+  outline: 3px solid rgba(0, 0, 0, 0.1);
 }
 
 body.light-mode header a:hover {
@@ -351,6 +393,7 @@ body.light-mode .image-block:hover {
 
 body.light-mode footer {
   background: rgba(255, 255, 255, 0.9);
+  outline: 3px solid rgba(0, 0, 0, 0.3);
 }
 
 body.light-mode footer p {
@@ -359,7 +402,9 @@ body.light-mode footer p {
 
 body.light-mode .theme-toggle {
   color: #333;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  outline: 3px solid rgba(0, 0, 0, 0.1);
+
 }
 
 body.light-mode .theme-toggle:hover {
