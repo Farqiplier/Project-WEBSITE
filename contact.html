@@ -41,7 +41,12 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     method: 'POST',
     body: data,
   })
-  .then(response => response.text())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.text();
+  })
   .then(result => {
     document.getElementById('success-message').style.display = 'block';
     setTimeout(() => {
