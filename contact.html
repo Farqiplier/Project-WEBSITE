@@ -11,4 +11,16 @@
 </div>
 <div class="text-block slide-up">
   <h2>Contact Form</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdwf9qhvSfFH7ly-iXHka6Smwsn8yOhAw2amAbu-xEanOHmFg/viewform?embedded=true" width="560" height="850" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  <form id="contact-form" action="/.netlify/functions/submit_form" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    
+    <button type="submit">Send Message</button>
+  </form>
+</div>
