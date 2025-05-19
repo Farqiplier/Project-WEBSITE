@@ -1,6 +1,12 @@
 <div class="text-block slide-up">
   <h2>Contact Form</h2>
-  <form id="contact-form">
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <!-- Honeypot field to catch bots -->
+    <input type="hidden" name="form-name" value="contact">
+    <div style="display: none;">
+      <label>Don't fill this out if you're human: <input name="bot-field"></label>
+    </div>
+    
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
     
@@ -15,49 +21,44 @@
 </div>
 
 <!-- Success Message Popup -->
-<div id="success-message" style="display: none; background-color: green; color: white; padding: 10px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
-  Thank you, your message has been sent.
+<div id="success-message" style="display: none; background-color: #4CAF50; color: white; padding: 15px; border-radius: 5px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
+  Thank you, your message has been sent!
 </div>
 
 <!-- Error Message Popup -->
-<div id="error-message" style="display: none; background-color: red; color: white; padding: 10px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
+<div id="error-message" style="display: none; background-color: #f44336; color: white; padding: 15px; border-radius: 5px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
   Sorry, there was an error sending your message. Please try again later.
 </div>
 
 <script>
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent the default form submission
-
-  const formData = new FormData(this);
-  const data = new URLSearchParams(formData);
-
-  console.log('Sending data:', data.toString()); // Log the data being sent
-
-  fetch('/.netlify/functions/submit_form', {
-    method: 'POST',
-    body: data,
-  })
-  .then(response => {
-    console.log('Response status:', response.status); // Log the response status
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('form[data-netlify="true"]');
+  
+  if (form) {
+    form.addEventListener('submit', function(event) {
+      // Optional: You can add client-side validation here
+      
+      // Show loading state or disable the button
+      const submitButton = form.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    });
+  }
+  
+  // Check URL for Netlify form success parameter
+  if (window.location.search.includes('form-submitted=true')) {
+    showMessage('success');
+    history.replaceState(null, '', window.location.pathname);
+  }
+  
+  function showMessage(type) {
+    const messageElement = document.getElementById(`${type}-message`);
+    if (messageElement) {
+      messageElement.style.display = 'block';
+      setTimeout(() => {
+        messageElement.style.display = 'none';
+      }, 5000);
     }
-    return response.text();
-  })
-  .then(result => {
-    console.log('Success:', result); // Log the success message
-    document.getElementById('success-message').style.display = 'block';
-    setTimeout(() => {
-      document.getElementById('success-message').style.display = 'none';
-    }, 3000);
-  })
-  .catch(error => {
-    console.error('Error:', error); // Log the error
-    document.getElementById('error-message').style.display = 'block';
-    setTimeout(() => {
-      document.getElementById('error-message').style.display = 'none';
-    }, 3000);
-  });
+  }
 });
-
 </script>

@@ -7,7 +7,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #121212, #1e1e2f);
+  background: linear-gradient(135deg, #010024, #000029);
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(6, 5, 10, 0.4);
   backdrop-filter: blur(10px);
   z-index: 1000;
   transition: background 0.5s ease;
@@ -61,7 +61,7 @@ body.light-mode .header-text {
   color: #333;
 }
 .nav-wrapper nav {
-  border: 2px solid #000000; /* Black border */
+  border: 2px solid #2a273aab; /* Black border */
   border-radius: 15px; /* Rounded corners */
   padding: 10px; /* Space inside the border */
   display: flex;
@@ -82,6 +82,58 @@ body.light-mode .header-text {
   background: rgb(255, 255, 255); /* Background color on hover */
 }
 
+.white-line-big {
+  width: 80%; /* Set the width of the line */
+  margin: 20px auto; /* Center the line and add spacing */
+  text-align: center;
+}
+
+.white-line-full {
+  width: 100% ; /* Set the width of the line */
+  margin: 20px auto ; /* Center the line and add spacing */
+  text-align: center; /* Center the line */
+}
+
+.white-line {
+  width: 60%; /* Set the width of the line */
+  margin: 20px auto; /* Center the line and add spacing */
+  text-align: center;
+}
+
+.white-line-small {
+  width: 40%; /* Set the width of the line */
+  margin: 20px auto; /* Center the line and add spacing */
+  text-align: center;
+}
+
+
+.white-line hr {
+  border: none; /* Remove the default border */
+  height: 2px; /* Set the thickness of the line */
+  background: rgba(255, 255, 255, 0.5); /* Set the color and transparency */
+  margin: 0; /* Remove default margin */
+}
+
+body.light-mode .white-line hr {
+  background: rgba(0, 0, 0, 0.5); /* Adjust color for light mode */
+}
+
+/* Utility class for spacing */
+.spacing {
+  margin: 20px 0; /* Adds 20px of vertical space */
+}
+
+.spacing-big {
+  margin: 40px 0; /* Adds 40px of vertical space */
+}
+
+.spacing-small {
+  margin: 10px 0; /* Adds 10px of vertical space */
+}
+
+.spacing-biggest {
+  margin: 60px 0; /* Adds 60px of vertical space */
+}
 .light-mode .nav-wrapper nav {
   border: 2px solid #ffffff; /* White border */
   background: rgba(255, 253, 253, 0.5); /* Light background color */
@@ -122,6 +174,14 @@ body.light-mode .header-text {
   text-align: center;
   transition: transform 0.3s ease, background 0.3s ease, outline 0.3s ease;
   outline: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.small-image-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
 }
 
 .software-item:hover {
@@ -228,7 +288,76 @@ body.light-mode .hardware-item {
 body.light-mode .hardware-item:hover {
   background: rgba(0, 0, 0, 0.2);
 }
+/* Blog Styles */
+.big-blog-block {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 800px;
+  margin: 30px auto;
+  outline: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease, outline 0.3s ease;
+}
 
+.big-blog-block:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.blog-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  outline: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease, outline 0.3s ease;
+}
+
+.blog-section:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.blog-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.blog-text {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+/* Light Mode Styles for Blog */
+body.light-mode .big-blog-block {
+  background: rgba(0, 0, 0, 0.1);
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .big-blog-block:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .blog-section {
+  background: rgba(0, 0, 0, 0.1);
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .blog-section:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .blog-title {
+  color: #000000;
+}
+
+body.light-mode .blog-text {
+  color: #333333;
+}
 
 /* Ensure the nav-buttons are aligned properly */
 .nav-buttons {
@@ -267,7 +396,7 @@ header a::after {
 }
 
 header a:hover {
-  transform: translateY(-5px);
+  /* transform: translateY(-5px); */
   background: rgba(255, 255, 255, 0.2);
 }
 
