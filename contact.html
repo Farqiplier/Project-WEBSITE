@@ -1,12 +1,15 @@
 <div class="text-block slide-up">
   <h2>Contact Form</h2>
-  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <!-- Honeypot field to catch bots -->
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success.html">
+    <!-- Netlify Form Requirements -->
     <input type="hidden" name="form-name" value="contact">
-    <div style="display: none;">
+    
+    <!-- Honeypot Field -->
+    <div class="hidden">
       <label>Don't fill this out if you're human: <input name="bot-field"></label>
     </div>
     
+    <!-- Form Fields -->
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
     
@@ -20,14 +23,9 @@
   </form>
 </div>
 
-<!-- Success Message Popup -->
+<!-- Success Message Popup (for AJAX submissions) -->
 <div id="success-message" style="display: none; background-color: #4CAF50; color: white; padding: 15px; border-radius: 5px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
   Thank you, your message has been sent!
-</div>
-
-<!-- Error Message Popup -->
-<div id="error-message" style="display: none; background-color: #f44336; color: white; padding: 15px; border-radius: 5px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
-  Sorry, there was an error sending your message. Please try again later.
 </div>
 
 <script>
@@ -35,28 +33,30 @@ document.addEventListener('DOMContentLoaded', function() {
   const form = document.querySelector('form[data-netlify="true"]');
   
   if (form) {
-    form.addEventListener('submit', function(event) {
-      // Optional: You can add client-side validation here
+    form.addEventListener('submit', async function(event) {
+      // Optional: Prevent default for AJAX handling
+      // event.preventDefault();
       
-      // Show loading state or disable the button
+      // Show loading state
       const submitButton = form.querySelector('button[type="submit"]');
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+      
+      // If you want to handle submission without page refresh,
+      // you would need to use AJAX here, but Netlify Forms
+      // works best with standard form submission
     });
   }
   
-  // Check URL for Netlify form success parameter
-  if (window.location.search.includes('form-submitted=true')) {
-    showMessage('success');
-    history.replaceState(null, '', window.location.pathname);
-  }
-  
-  function showMessage(type) {
-    const messageElement = document.getElementById(`${type}-message`);
-    if (messageElement) {
-      messageElement.style.display = 'block';
+  // Check URL for success parameter
+  if (window.location.search.includes('submit=success')) {
+    const successElement = document.getElementById('success-message');
+    if (successElement) {
+      successElement.style.display = 'block';
       setTimeout(() => {
-        messageElement.style.display = 'none';
+        successElement.style.display = 'none';
       }, 5000);
     }
   }
