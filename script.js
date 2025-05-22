@@ -1,7 +1,7 @@
-// C:\Users\TAKR211206\Desktop\Project WEBSITE\script.js
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    loadPage('home'); // Make sure home.html loads by default
+    loadPage('home'); 
     addScrollAnimations(); 
 });
 
@@ -29,7 +29,6 @@ function addScrollAnimations() {
                 element.classList.add('active');
             } 
 
-            // Force elements to be 'active' on initial load:
             element.classList.add('active'); 
         });
     }

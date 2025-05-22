@@ -1,4 +1,3 @@
-/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -40,20 +39,19 @@ header {
 .nav-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between nav and theme toggle */
-  position: relative; /* For positioning the pseudo-element */
-  justify-content: space-between; /* Space between elements */
+  gap: 10px;
+  position: relative;
+  justify-content: space-between;
 }
 
 .header-text {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   text-align: center;
   font-size: 2.1em;
   color: #fff;
   top: 50%;
-  transform: translate(-50%, -50%);
   font-weight: bold;
 }
 
@@ -61,91 +59,89 @@ body.light-mode .header-text {
   color: #333;
 }
 .nav-wrapper nav {
-  border: 2px solid #2a273aab; /* Black border */
-  border-radius: 15px; /* Rounded corners */
-  padding: 10px; /* Space inside the border */
+  border: 2px solid #2a273aab;
+  border-radius: 15px;
+  padding: 10px;
   display: flex;
-  gap: 10px; /* Space between the buttons */
+  gap: 10px;
 }
 
 .nav-wrapper nav a {
-  padding: 10px 20px; /* Adjust padding for buttons */
-  margin: 0; /* Remove margin */
-  border-radius: 10px; /* Rounded corners for buttons */
-  text-decoration: none; /* Remove underline */
-  color: #fff; /* Text color */
-  background: rgba(255, 255, 255, 0.1); /* Background color */
-  transition: background 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nav-wrapper nav a:hover {
-  background: rgb(255, 255, 255); /* Background color on hover */
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .white-line-big {
-  width: 80%; /* Set the width of the line */
-  margin: 20px auto; /* Center the line and add spacing */
+  width: 80%;
+  margin: 20px auto;
   text-align: center;
 }
 
 .white-line-full {
-  width: 100% ; /* Set the width of the line */
-  margin: 20px auto ; /* Center the line and add spacing */
-  text-align: center; /* Center the line */
+  width: 100% ;
+  margin: 20px auto ;
+  text-align: center;
 }
 
 .white-line {
-  width: 60%; /* Set the width of the line */
-  margin: 20px auto; /* Center the line and add spacing */
+  width: 60%;
+  margin: 20px auto;
   text-align: center;
 }
 
 .white-line-small {
-  width: 40%; /* Set the width of the line */
-  margin: 20px auto; /* Center the line and add spacing */
+  width: 40%;
+  margin: 20px auto;
   text-align: center;
 }
 
-
 .white-line hr {
-  border: none; /* Remove the default border */
-  height: 2px; /* Set the thickness of the line */
-  background: rgba(255, 255, 255, 0.5); /* Set the color and transparency */
-  margin: 0; /* Remove default margin */
+  border: none;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0;
 }
 
 body.light-mode .white-line hr {
-  background: rgba(0, 0, 0, 0.5); /* Adjust color for light mode */
+  background: rgba(0, 0, 0, 0.5);
 }
 
-/* Utility class for spacing */
 .spacing {
-  margin: 20px 0; /* Adds 20px of vertical space */
+  margin: 20px 0;
 }
 
 .spacing-big {
-  margin: 40px 0; /* Adds 40px of vertical space */
+  margin: 40px 0;
 }
 
 .spacing-small {
-  margin: 10px 0; /* Adds 10px of vertical space */
+  margin: 10px 0;
 }
 
 .spacing-biggest {
-  margin: 60px 0; /* Adds 60px of vertical space */
+  margin: 60px 0;
 }
 .light-mode .nav-wrapper nav {
-  border: 2px solid #ffffff; /* White border */
-  background: rgba(255, 253, 253, 0.5); /* Light background color */
+  border: 2px solid #ffffff;
+  background: rgba(255, 253, 253, 0.5);
 }
 
 .light-mode .nav-wrapper nav a {
-  color: #000; /* Black text color */
-  background: rgba(143, 143, 143, 0.1); /* Light background color */
+  color: #000;
+  background: rgba(143, 143, 143, 0.1);
 }
 
 .light-mode .nav-wrapper nav a:hover {
-  background: rgba(255, 255, 255, 0.2); /* Light background color on hover */
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .software-wrapper {
@@ -288,7 +284,6 @@ body.light-mode .hardware-item {
 body.light-mode .hardware-item:hover {
   background: rgba(0, 0, 0, 0.2);
 }
-/* Blog Styles */
 .big-blog-block {
   background: rgba(255, 255, 255, 0.05);
   padding: 20px;
@@ -332,7 +327,6 @@ body.light-mode .hardware-item:hover {
   color: #cccccc;
 }
 
-/* Light Mode Styles for Blog */
 body.light-mode .big-blog-block {
   background: rgba(0, 0, 0, 0.1);
   outline: 2px solid rgba(0, 0, 0, 0.2);
@@ -359,29 +353,29 @@ body.light-mode .blog-text {
   color: #333333;
 }
 
-/* Ensure the nav-buttons are aligned properly */
 .nav-buttons {
   display: flex;
   align-items: center;
-  margin-right: 20px; /* Add margin to push buttons next to the image */
+  margin-right: 20px;
 }
 
 header a {
-  position: relative; /* Allows positioning of the pseudo-element */
+  position: relative;
   color: #fff;
   background: rgba(255, 255, 255, 0.0);
   padding: 10px 20px;
   transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
   margin-right: 20px;
-  text-decoration: none; /* Remove underline from the entire element */
-  font-size: 1em; /* Increases the font size */
+  text-decoration: none;
+  font-size: 1em;
   border-radius: 15px;
+  outline: 3px solid rgba(255, 255, 255, 0.15);
 }
 
 header a span {
-  text-decoration: underline; /* Apply underline only to the text inside the span */
-  text-decoration-thickness: 1px; /* Makes the underline thicker */
-  text-underline-offset: 3px; /* Moves the underline lower */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 header a:hover {
@@ -396,7 +390,6 @@ header a::after {
 }
 
 header a:hover {
-  /* transform: translateY(-5px); */
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -419,6 +412,7 @@ main {
   max-width: 600px;
   transition: transform 0.3s ease, background 0.3s ease, outline 0.3s ease;
   outline: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
 }
 
 .text-block:hover,
@@ -451,7 +445,7 @@ main {
 }
 
 .item {
-  width: 200px; /* Set a specific width */
+  width: 200px;
   margin-left: auto; 
 }
 
@@ -472,7 +466,6 @@ footer p {
   transition: color 0.5s ease;
 }
 
-/* Dark/Light Mode Toggle */
 .theme-toggle {
   cursor: pointer;
   padding: 10px;
@@ -488,7 +481,6 @@ footer p {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Light Mode Styles */
 body.light-mode {
   background: linear-gradient(135deg, #ffffff, #cccccc);
   color: #333;
@@ -541,9 +533,116 @@ body.light-mode .theme-toggle:hover {
 }
 
 body.light-mode .theme-toggle::before {
-  content: "☀️ Toggle Light Mode"; /* Sun icon for light mode */
+  content: "☀️ Toggle Light Mode"; 
 }
 
 body:not(.light-mode) .theme-toggle::before {
-  content: "🌙 Toggle Dark Mode"; /* Moon icon for dark mode */
+  content: "🌙 Toggle Dark Mode"; 
+}
+
+.about-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.team-member {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  outline: 2px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 20px;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.member-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.role {
+  color: #4CAF50;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.bio {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+.team-description {
+  font-size: 1.1em;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.project-info {
+  margin-top: 50px;
+  text-align: center;
+}
+
+body.light-mode .team-member {
+  background: rgba(0, 0, 0, 0.05);
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .team-member:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .team-member h3 {
+  color: #333;
+}
+
+body.light-mode .bio {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .team-member {
+    width: 80%;
+  }
 }

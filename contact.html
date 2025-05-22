@@ -1,15 +1,10 @@
 <div class="text-block slide-up">
   <h2>Contact Form</h2>
   <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="ajax-form">
-    <!-- Netlify Requirements -->
     <input type="hidden" name="form-name" value="contact">
-    
-    <!-- Honeypot Field (Spam Protection) -->
     <div style="display: none;">
       <label>Leave this empty: <input name="bot-field"></label>
     </div>
-    
-    <!-- Visible Form Fields -->
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
     
@@ -23,12 +18,11 @@
   </form>
 </div>
 
-<!-- Success Message (Hidden by Default) -->
 <div id="success-message" style="display: none; background-color: #4CAF50; color: white; padding: 15px; border-radius: 5px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
   <i class="fas fa-check-circle"></i> Thank you! Your message has been sent.
 </div>
 
-<!-- Error Message (Hidden by Default) -->
+
 <div id="error-message" style="display: none; background-color: #f44336; color: white; padding: 15px; border-radius: 5px; position: fixed; top: 20px; right: 20px; z-index: 1000;">
   <i class="fas fa-exclamation-circle"></i> Error! Please try again later.
 </div>
@@ -42,15 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       
-      // Disable button during submission
+      
       submitBtn.disabled = true;
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       
       try {
-        // Convert form data to URL-encoded format (Netlify requirement)
-        const formData = new URLSearchParams(new FormData(form));
-        
-        // AJAX submission to Netlify
+        const formData = new URLSearchParams(new FormData(form))
+
         const response = await fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -58,11 +50,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         if (response.ok) {
-          // Show success message
           document.getElementById('success-message').style.display = 'block';
           form.reset();
           
-          // Hide after 5 seconds
+        
           setTimeout(() => {
             document.getElementById('success-message').style.display = 'none';
           }, 5000);
@@ -76,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('error-message').style.display = 'none';
         }, 5000);
       } finally {
-        // Re-enable button
         submitBtn.disabled = false;
         submitBtn.innerHTML = 'Send Message';
       }
